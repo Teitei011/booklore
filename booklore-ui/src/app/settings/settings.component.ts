@@ -15,8 +15,10 @@ import {OpdsSettingsComponent} from './opds-settings/opds-settings.component';
 import {DeviceSettingsComponent} from './device-settings-component/device-settings-component';
 import {FileNamingPatternComponent} from './file-naming-pattern/file-naming-pattern.component';
 import {OpdsSettingsV2} from './opds-settings-v2/opds-settings-v2';
+import {StorygraphImport} from "./storygraph-import/storygraph-import";
 
 export enum SettingsTab {
+  StoryGraphImport = 'storygraph-import',
   ReaderSettings = 'reader',
   ViewPreferences = 'view',
   DeviceSettings = 'device',
@@ -49,7 +51,8 @@ export enum SettingsTab {
     OpdsSettingsComponent,
     DeviceSettingsComponent,
     FileNamingPatternComponent,
-    OpdsSettingsV2
+    OpdsSettingsV2,
+    StorygraphImport
   ],
   templateUrl: './settings.component.html',
   styleUrl: './settings.component.scss'

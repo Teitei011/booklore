@@ -174,5 +174,7 @@ public interface BookRepository extends JpaRepository<BookEntity, Long>, JpaSpec
     @Query("DELETE FROM BookEntity b WHERE b.deletedAt IS NOT NULL AND b.deletedAt < :cutoff")
     int deleteAllByDeletedAtBefore(Instant cutoff);
 
-    
+    @Query("SELECT DISTINCT b FROM BookEntity b JOIN b.metadata m JOIN m.authors a WHERE LOWER(m.title) = LOWER(:title) AND a.name IN :authorNames")
+    List<BookEntity> findByMetadataTitleAndAuthorNames(@Param("title") String title, @Param("authorNames") List<String> authorNames);
+
 }

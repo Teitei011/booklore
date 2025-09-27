@@ -1,0 +1,13 @@
+<p-toast></p-toast>
+<div class="p-4">
+  <h3 class="text-lg font-medium">Import from StoryGraph</h3>
+  <p class="text-sm text-gray-500">
+    Import your reading data from a StoryGraph CSV export.
+  </p>
+  <div class="mt-4">
+    <input type="file" (change)="onFileSelected($event)" accept=".csv" />
+    <button (click)="onUpload()" [disabled]="!selectedFile" class="p-button p-button-sm ml-2">
+      Import
+    </button>
+  </div>
+</div>

@@ -66,6 +66,7 @@ dependencies {
     // --- JSON & Web Scraping ---
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.19.2'
     implementation 'org.jsoup:jsoup:1.21.1'
+    implementation 'com.opencsv:opencsv:5.9'
 
     // --- Mapping (DTOs & Entities) ---
     implementation 'org.mapstruct:mapstruct:1.6.3'

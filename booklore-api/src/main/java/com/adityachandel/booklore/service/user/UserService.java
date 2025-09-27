@@ -90,6 +90,12 @@ public class UserService {
         return authenticationService.getAuthenticatedUser();
     }
 
+    public BookLoreUserEntity getAuthenticatedUserEntity() {
+        BookLoreUser bookLoreUser = getMyself();
+        return userRepository.findById(bookLoreUser.getId())
+                .orElseThrow(() -> ApiError.USER_NOT_FOUND.createException(bookLoreUser.getId()));
+    }
+
     public void changePassword(ChangePasswordRequest changePasswordRequest) {
         BookLoreUser bookLoreUser = authenticationService.getAuthenticatedUser();
         BookLoreUserEntity bookLoreUserEntity = userRepository.findById(bookLoreUser.getId())
